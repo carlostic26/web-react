@@ -25,12 +25,12 @@ import { JSX, SVGProps } from "react"
 
 export function NavBarResp() {
   return (
-    <header className="flex h-16 w-full items-center justify-between bg-background px-4 md:px-6 bg-personalizado-secundary ">
+    <header className="flex h-16 w-full items-center justify-between bg-background px-4 md:px-6 bg-personalizado-secundary mr-16">
       <Link href="#" className="flex items-center gap-2" prefetch={false}>
         <Image alt="icono" src="/icon-web.webp" width={40} height={40} />
         <Image alt="publicidad unatecla punto com" src="/Publicidad-banner.webp" width={320} height={100} />
       </Link>
-      <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+      <nav className="hidden items-center gap-6 text-sm font-medium md:flex mr-4">
         <Link href="#" className="flex flex-col items-center justify-center text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
           <HomeIcon className="w-5 h-5 mb-2 " text-personalizado-background />
           <p style={{ color: 'white' }} className="text-white">Home</p>
@@ -55,20 +55,21 @@ export function NavBarResp() {
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="right" className="w-[200px]">
-          <div className="grid gap-4 p-4">
-            <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+        <SheetContent side="right" className="w-[200px] bg-personalizado-secundary ">
+          <div className="grid gap-4 p-4 mr-8">
+            <Link href="#" className="hover:text-muted-foreground text-foreground" prefetch={false}>
               Home
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              About
+            <Link href="#" className="hover:text-muted-foreground text-foreground" prefetch={false}>
+              Job
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              Services
+            <Link href="#" className="hover:text-muted-foreground text-foreground " prefetch={false}>
+              Blog
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+            <Link href="#" className="hover:text-muted-foreground text-foreground" prefetch={false}>
               Contact
             </Link>
+            <div className="w-[40px] mr-8"></div>
           </div>
         </SheetContent>
       </Sheet>
@@ -100,21 +101,7 @@ function MenuIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
 
 function BookIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      style={{ color: '#162E3E' }}
-    >
-      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#162E3E"><path d="M146.67-120q-27 0-46.84-19.83Q80-159.67 80-186.67v-586.66q0-27 19.83-46.84Q119.67-840 146.67-840h666.66q27 0 46.84 19.83Q880-800.33 880-773.33v586.66q0 27-19.83 46.84Q840.33-120 813.33-120H146.67Zm132.66-164h401.34q14.16 0 23.75-9.62 9.58-9.61 9.58-23.83 0-14.22-9.58-23.72-9.59-9.5-23.75-9.5H279.33q-14.16 0-23.75 9.62-9.58 9.62-9.58 23.83 0 14.22 9.58 23.72 9.59 9.5 23.75 9.5Zm0-164h90q14.17 0 23.75-9.58 9.59-9.59 9.59-23.75v-161.34q0-14.16-9.59-23.75-9.58-9.58-23.75-9.58h-90q-14.16 0-23.75 9.58-9.58 9.59-9.58 23.75v161.34q0 14.16 9.58 23.75 9.59 9.58 23.75 9.58ZM532-448h148.67q14.16 0 23.75-9.62 9.58-9.61 9.58-23.83 0-14.22-9.58-23.72-9.59-9.5-23.75-9.5H532q-14.17 0-23.75 9.62t-9.58 23.83q0 14.22 9.58 23.72 9.58 9.5 23.75 9.5Zm0-161.33h148.67q14.16 0 23.75-9.62 9.58-9.62 9.58-23.83 0-14.22-9.58-23.72-9.59-9.5-23.75-9.5H532q-14.17 0-23.75 9.62-9.58 9.61-9.58 23.83 0 14.22 9.58 23.72 9.58 9.5 23.75 9.5Z" /></svg>
   )
 }
 
@@ -126,7 +113,7 @@ function LogoIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
       width="24"
       height="24"
       viewBox="0 0 24 24"
-      fill="none"
+      fill="nocune"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
@@ -154,65 +141,21 @@ l52 -49 -193 -193 c-107 -107 -197 -194 -200 -194 -3 0 -9 48 -12 107 -8 144
 
 function BriefcaseIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      style={{ color: '#162E3E' }}
-    >
-      <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-      <rect width="20" height="14" x="2" y="6" rx="2" />
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#162E3E"><path d="M146.67-120q-27 0-46.84-19.83Q80-159.67 80-186.67v-466.66q0-27 19.83-46.84Q119.67-720 146.67-720H320v-93.33q0-27 19.83-46.84Q359.67-880 386.67-880h186.66q27 0 46.84 19.83Q640-840.33 640-813.33V-720h173.33q27 0 46.84 19.83Q880-680.33 880-653.33v466.66q0 27-19.83 46.84Q840.33-120 813.33-120H146.67Zm240-600h186.66v-93.33H386.67V-720Z" /></svg>
   )
 }
 
 
 function HomeIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      style={{ color: '#162E3E' }}
-    >
-      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-      <polyline points="9 22 9 12 15 12 15 22" />
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#162E3E"><path d="M160-186.67v-380q0-15.83 7.08-30 7.09-14.16 19.59-23.33L440-810q17.45-13.33 39.89-13.33T520-810l253.33 190q12.5 9.17 19.59 23.33 7.08 14.17 7.08 30v380q0 27.5-19.58 47.09Q760.83-120 733.33-120h-140q-14.16 0-23.75-9.58-9.58-9.59-9.58-23.75v-213.34q0-14.16-9.58-23.75-9.59-9.58-23.75-9.58h-93.34q-14.16 0-23.75 9.58-9.58 9.59-9.58 23.75v213.34q0 14.16-9.58 23.75-9.59 9.58-23.75 9.58h-140q-27.5 0-47.09-19.58Q160-159.17 160-186.67Z" /></svg>
+
   )
 }
 
 
 function MailOpenIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      style={{ color: '#162E3E' }}
-    >
-      <path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z" />
-      <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10" />
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#162E3E"><path d="M66-120q-27 0-46.83-19.83Q-.67-159.67-.67-186.67v-586.66q0-27 19.84-46.84Q39-840 66-840h827.33q27 0 46.84 19.83Q960-800.33 960-773.33v586.66q0 27-19.83 46.84Q920.33-120 893.33-120H66Zm273.33-280q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM72-186.67h534q-44-71-114-111.83t-152.67-40.83q-82 0-153 40.83T72-186.67Zm522.67-336H800q14.33 0 23.83-9.5 9.5-9.5 9.5-23.83v-124q0-14.33-9.5-23.83-9.5-9.5-23.83-9.5H594.67q-14.34 0-23.84 9.5t-9.5 23.83v124q0 14.33 9.5 23.83 9.5 9.5 23.84 9.5ZM697.33-604l77.34-57.33q8-6 16.66-1.5 8.67 4.5 8.67 14.5 0 1-6.33 13.33l-76 56.33q-9 6.67-19.67 6.67-10.67 0-19.67-6.67L601-635q-1.67-1.67-6.33-13.33 0-10 9-14.5t17 1.5L697.33-604Z" /></svg>
   )
 }
