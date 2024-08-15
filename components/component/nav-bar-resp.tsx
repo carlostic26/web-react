@@ -31,7 +31,7 @@ export function NavBarResp() {
         <Image alt="publicidad unatecla punto com" src="/Publicidad-banner.webp" width={310} height={100} />
       </Link>
       <nav className="hidden items-center gap-6 font-medium md:flex md:mr-16 md:pr-4 lg:mr-24 lg:pr-12">
-        <Link href="#" className="flex flex-col items-center justify-center text-xs font-medium hover:underline underline-offset-4" prefetch={false}>
+        <Link href="/" className="flex flex-col items-center justify-center text-xs font-medium hover:underline underline-offset-4" prefetch={false}>
           <HomeIcon className="w-4 h-4 mb-1 " text-personalizado-background />
           <p style={{ color: 'white' }} className="text-white">Home</p>
         </Link>

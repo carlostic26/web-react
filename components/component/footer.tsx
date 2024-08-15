@@ -9,7 +9,8 @@ const FooterService = () => {
         <footer className="bg-[#122431] text-muted-foreground py-6 px-4 md:px-6">
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-center">
                 <div className="flex items-center gap-2 order-1 md:order-2 md:mx-auto">
-                    <Image alt="icono" src="/icon-web.webp" width={40} height={40} />
+
+                    <LogoIcon />
                     <p className="text-sm">&copy; UnaTecla Copyright 2024</p>
                 </div>
                 <nav className="flex items-center gap-4">
@@ -28,6 +29,32 @@ const FooterService = () => {
         </footer>
     );
 };
+
+function LogoIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 200.000000 200.000000" width="30px" height="30px"
+        >
+
+            <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)"
+                fill="grey" stroke="none">
+                <path d="M855 1590 l-176 -211 73 -68 c40 -37 88 -81 106 -97 l33 -29 -70 -72
+                        -70 -73 -97 10 -96 10 -97 -89 c-128 -118 -181 -176 -181 -199 0 -10 18 -63
+                        40 -118 l41 -99 -72 -146 c-74 -152 -80 -181 -37 -195 18 -5 14 -13 -46 -73
+                        -36 -36 -66 -70 -66 -74 0 -9 1685 -10 1729 -1 l31 6 0 867 0 866 -227 -225
+                        c-331 -327 -490 -479 -462 -443 13 18 73 91 132 163 l109 130 -69 64 c-157
+                        145 -338 306 -345 306 -4 0 -86 -95 -183 -210z m170 -529 l57 -54 -193 -193
+                        c-107 -107 -197 -194 -200 -194 -3 0 -9 48 -12 107 -7 144 -1 140 -172 117
+                        l-40 -6 60 61 60 61 104 -6 104 -7 81 86 c44 47 84 85 88 84 3 -1 32 -26 63
+                        -56z m-443 -382 c3 -71 6 -83 28 -101 l24 -19 -150 -150 c-82 -82 -152 -149
+                        -156 -149 -4 0 25 66 64 146 l71 145 -36 90 c-19 49 -34 89 -34 90 3 1 160 26
+                        173 28 8 1 13 -27 16 -80z"/>
+                <path d="M613 1218 c-33 -16 -48 -61 -33 -98 15 -36 37 -50 77 -50 77 1 106
+99 41 144 -26 18 -53 19 -85 4z"/>
+            </g>
+        </svg>
+    )
+}
 
 function FacebookIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
     return (
@@ -50,37 +77,8 @@ function WhatsappIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) 
     )
 }
 
-function LogoIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="nocune"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="M855 1590 l-176 -211 73 -68 c40 -37 88 -81 106 -97 l33 -29 -70 -72
-  -70 -73 -97 10 -96 10 -87 -79 c-123 -112 -191 -187 -191 -209 0 -10 18 -63
-  40 -118 l41 -99 -72 -146 c-74 -152 -80 -181 -37 -195 18 -5 14 -13 -46 -73
-  -36 -36 -66 -70 -66 -74 0 -9 1745 -5 1754 4 3 3 5 393 4 867 l-3 862 -235
-  -233 c-377 -372 -470 -462 -470 -455 0 4 19 29 43 55 23 27 82 97 130 156 l89
-  107 -69 64 c-157 145 -338 306 -345 306 -4 0 -86 -95 -183 -210z m175 -534
-  l52 -49 -193 -193 c-107 -107 -197 -194 -200 -194 -3 0 -9 48 -12 107 -8 144
-  -2 140 -172 117 l-40 -6 60 61 60 61 104 -6 104 -7 81 85 c47 50 86 83 92 80
-  7 -4 35 -29 64 -56z m-448 -377 c3 -71 6 -83 28 -101 l24 -19 -150 -150 c-82
-  -82 -152 -149 -156 -149 -4 0 25 66 64 146 l71 145 -36 90 c-19 49 -34 89 -34
-  90 3 1 160 26 173 28 8 1 13 -27 16 -80z"/>
-            <path d="M613 1218 c-33 -16 -48 -61 -33 -98 15 -36 37 -50 77 -50 77 1 106
-  99 41 144 -26 18 -53 19 -85 4z"/>
-            <rect width="20" height="14" x="2" y="6" rx="2" />
-        </svg>
-    )
-}
+
+
 function HomeIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#162E3E"><path d="M160-186.67v-380q0-15.83 7.08-30 7.09-14.16 19.59-23.33L440-810q17.45-13.33 39.89-13.33T520-810l253.33 190q12.5 9.17 19.59 23.33 7.08 14.17 7.08 30v380q0 27.5-19.58 47.09Q760.83-120 733.33-120h-140q-14.16 0-23.75-9.58-9.58-9.59-9.58-23.75v-213.34q0-14.16-9.58-23.75-9.59-9.58-23.75-9.58h-93.34q-14.16 0-23.75 9.58-9.58 9.59-9.58 23.75v213.34q0 14.16-9.58 23.75-9.59 9.58-23.75 9.58h-140q-27.5 0-47.09-19.58Q160-159.17 160-186.67Z" /></svg>
