@@ -31,6 +31,7 @@ import Image from "next/image"
 import { CardServices } from "./card-services"
 import { CardTitle } from "./card-title"
 import { NavBarResp } from "./nav-bar-resp"
+import FooterService from "./footer"
 
 export function HomePage() {
   return (
@@ -72,8 +73,8 @@ export function HomePage() {
         </div>
       </header> */}
       <NavBarResp />
-      <main className="bg-personalizado-background flex-1 md:px-6">
-        <div className="container mx-auto w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:justify-items-center">
+      <main className="bg-personalizado-background flex-1 md:px-6 ">
+        <div className="container mx-auto w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:justify-items-center pt-8 mt-14">
 
           <CardServices
             image="/img_test.webp"
@@ -108,19 +109,7 @@ export function HomePage() {
 
         </div>
       </main>
-      <footer className="bg-muted text-muted-foreground py-6 px-4 md:px-6">
-        <div className="container mx-auto flex items-center justify-between">
-          <p className="text-sm">&copy; 2024 News & Blog. All rights reserved.</p>
-          <nav className="flex items-center gap-4">
-            <Link href="#" className="text-sm hover:underline underline-offset-4" prefetch={false}>
-              Privacy Policy
-            </Link>
-            <Link href="#" className="text-sm hover:underline underline-offset-4" prefetch={false}>
-              Terms of Service
-            </Link>
-          </nav>
-        </div>
-      </footer>
+      <FooterService />
     </div>
   )
 }
