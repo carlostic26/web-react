@@ -24,6 +24,8 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import React from 'react';
+import Carousel from './carousel';
 
 export function PageJob() {
   return (
@@ -61,159 +63,43 @@ export function PageJob() {
                 />
               </Avatar>
               <p className="text-sm text-muted-foreground">Bob Johnson, Developer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisi eu tincidunt aliquet, nunc nunc lacinia nunc, nec tincidunt nisl nunc nec nunc. Sed euismod, nunc nec.</p>
+
             </div>
           </div>
 
 
         </div>
       </section>
-      <section className="py-12 md:py-20">
+
+
+      <section className="py-10 md:py-20">
         <div className="container mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="space-y-2">
-              <h2 className="text-2xl font-bold">Web Page Creation</h2>
-              <div className="grid grid-cols-3 gap-4">
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Web Page 1"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Web Page 2"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Web Page 3"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-              </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1">
+            <div className="space-y-5">
+
+              <Carousel />
             </div>
             <div className="space-y-2">
-              <h2 className="text-2xl font-bold">Work Done</h2>
-              <div className="grid grid-cols-3 gap-4">
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Work 1"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Work 2"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Work 3"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-              </div>
+
+              <Carousel />
             </div>
             <div className="space-y-2">
-              <h2 className="text-2xl font-bold">Content Creation</h2>
-              <div className="grid grid-cols-3 gap-4">
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Content 1"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Content 2"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Content 3"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-              </div>
+
+              <Carousel />
             </div>
             <div className="space-y-2">
-              <h2 className="text-2xl font-bold">Image Restoration</h2>
-              <div className="grid grid-cols-3 gap-4">
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Image 1"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Image 2"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="Image 3"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-              </div>
+
+              <Carousel />
             </div>
             <div className="space-y-2">
-              <h2 className="text-2xl font-bold">Application Creation</h2>
-              <div className="grid grid-cols-3 gap-4">
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="App 1"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="App 2"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-                <img
-                  src="/placeholder.svg"
-                  width={200}
-                  height={150}
-                  alt="App 3"
-                  className="rounded-md"
-                  style={{ aspectRatio: "200/150", objectFit: "cover" }}
-                />
-              </div>
+
+              <Carousel />
+
+              <h2 className="text-2xl font-bold">Creación de páginas web</h2>
+              <h2 className="text-2xl font-bold">Trabajos realizados</h2>
+              <h2 className="text-2xl font-bold">Creacion de contenido</h2>
+              <h2 className="text-2xl font-bold">Restaruación de imagen</h2>
+              <h2 className="text-2xl font-bold">Desarrollo de aplicaciones móviles</h2>
             </div>
           </div>
         </div>

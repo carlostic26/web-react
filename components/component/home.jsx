@@ -73,7 +73,7 @@ export function HomePage() {
         </div>
       </header> */}
       <NavBarResp />
-      <main className="bg-personalizado-background flex-1 md:px-6 ">
+      <main className="bg-primary flex-1 md:px-6 "> {/* bg-personalizado-background */}
         <div className="container mx-auto w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:justify-items-center pt-8 mt-14">
 
           <CardServices
