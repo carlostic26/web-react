@@ -24,8 +24,9 @@ import { Button } from "@/components/ui/button"
 import { JSX, SVGProps } from "react"
 
 export function NavBarResp() {
+  // sad bg-personalizado-secundary sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-sm dark:bg-muted/80
   return (
-    <header className="flex h-16 w-full items-center justify-between bg-background px-4 md:px-6 bg-personalizado-secundary mr-16">
+    <header className="sticky top-0 z-40 flex h-16 w-full items-center justify-between bg-background/80  backdrop-blur-sm px-4 md:px-6 bg-personalizado-secundary mr-16">
       <Link href="#" className="flex items-center gap-2" prefetch={false}>
         <Image alt="icono" src="/icon-web.webp" width={40} height={40} />
         <Image alt="publicidad unatecla punto com" src="/Publicidad-banner.webp" width={310} height={100} />
@@ -39,11 +40,11 @@ export function NavBarResp() {
           <BriefcaseIcon className="w-4 h-4 mb-1 " />
           <p style={{ color: 'white' }} className="text-white">Job</p>
         </Link>
-        <Link href="#" className="flex flex-col items-center justify-center text-xs font-medium hover:underline underline-offset-4" prefetch={false}>
+        <Link href="/blog" className="flex flex-col items-center justify-center text-xs font-medium hover:underline underline-offset-4" prefetch={false}>
           <BookIcon className="w-4 h-4 mb-1 " />
           <p style={{ color: 'white' }} className="text-white">Blog</p>
         </Link>
-        <Link href="#" className="flex flex-col items-center justify-center text-xs font-medium hover:underline underline-offset-4" prefetch={false}>
+        <Link href="/contact" className="flex flex-col items-center justify-center text-xs font-medium hover:underline underline-offset-4" prefetch={false}>
           <MailOpenIcon className="w-4 h-4 mb-1" />
           <p style={{ color: 'white' }} className="text-white">Contact</p>
         </Link>
