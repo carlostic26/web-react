@@ -33,7 +33,7 @@ import { JSX, SVGProps } from "react"
 
 export function ContactPage() {
   return (
-    <div className="dark:bg-muted dark:text-foreground">
+    <div className="bg-primary ">
       {/* <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-sm dark:bg-muted/80">
         <div className="container mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="#" className="flex items-center gap-2 font-semibold" prefetch={false}>
@@ -65,7 +65,7 @@ export function ContactPage() {
           </nav>
         </div>
       </header> */}
-      <main className="container mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+      <main className=" container mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-[2fr_1fr] lg:gap-12">
           <div>
             <article className="prose dark:prose-invert">
