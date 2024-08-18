@@ -24,79 +24,21 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 import Link from "next/link"
-import { Input } from "@/components/ui/input"
-import { JSX, SVGProps } from "react"
+import { CardBlogH } from "./card-blog-h"
 
 export function BlogPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-primary">
       <main className="flex-1 py-8 px-6">
         <div className="container mx-auto grid gap-8">
           <div className="grid gap-4">
-            <Link href="#" className="group" prefetch={false}>
-              <div className="bg-muted rounded-md overflow-hidden">
-                <img
-                  src="/placeholder.svg"
-                  alt="Post image"
-                  width={800}
-                  height={400}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform"
-                  style={{ aspectRatio: "800/400", objectFit: "cover" }}
-                />
-              </div>
-              <div className="mt-4">
-                <h2 className="text-xl font-bold group-hover:text-primary transition-colors">
-                  The Future of Web Development
-                </h2>
-                <p className="text-muted-foreground text-sm">July 24, 2024</p>
-                <p className="mt-2 line-clamp-3 text-muted-foreground">
-                  In this post, we explore the latest trends and technologies shaping the future of web development.
-                  From the rise of headless CMS to the growing importance of performance and accessibility, we dive into
-                  the key areas that will define the web of tomorrow.
-                </p>
-              </div>
-            </Link>
-            <Link href="#" className="group" prefetch={false}>
-              <div className="bg-muted rounded-md overflow-hidden">
-                <img
-                  src="/placeholder.svg"
-                  alt="Post image"
-                  width={800}
-                  height={400}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform"
-                  style={{ aspectRatio: "800/400", objectFit: "cover" }}
-                />
-              </div>
-              <div className="mt-4">
-                <h2 className="text-xl font-bold group-hover:text-primary transition-colors">Mastering React Hooks</h2>
-                <p className="text-muted-foreground text-sm">June 15, 2024</p>
-                <p className="mt-2 line-clamp-3 text-muted-foreground">Lorem ipsum</p>
-              </div>
-            </Link>
-            <Link href="#" className="group" prefetch={false}>
-              <div className="bg-muted rounded-md overflow-hidden">
-                <img
-                  src="/placeholder.svg"
-                  alt="Post image"
-                  width={800}
-                  height={400}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform"
-                  style={{ aspectRatio: "800/400", objectFit: "cover" }}
-                />
-              </div>
-              <div className="mt-4">
-                <h2 className="text-xl font-bold group-hover:text-primary transition-colors">
-                  Designing Accessible Interfaces
-                </h2>
-                <p className="text-muted-foreground text-sm">May 30, 2024</p>
-                <p className="mt-2 line-clamp-3 text-muted-foreground">
-                  Accessibility is no longer an afterthought in web development. In this post, we explore the principles
-                  and best practices of designing accessible user interfaces. From color contrast to keyboard
-                  navigation, we cover the essential elements that make your website inclusive and user-friendly for
-                  all.
-                </p>
-              </div>
-            </Link>
+          <CardBlogH/>
+          <CardBlogH/>
+
+          <CardBlogH/>
+          <CardBlogH/>
+          <CardBlogH/>
+
           </div>
         </div>
       </main>

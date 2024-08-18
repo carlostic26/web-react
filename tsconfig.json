@@ -33,7 +33,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "components/component/home.jsx"
-  ],
+, "components/component/call-action-button.jsx"  ],
   "exclude": [
     "node_modules"
   ]
