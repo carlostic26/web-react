@@ -30,6 +30,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { JSX, SVGProps } from "react"
+import { ContentFormContact } from "./component/form-contact"
 
 export function ContactPage() {
   return (
@@ -65,89 +66,29 @@ export function ContactPage() {
           </nav>
         </div>
       </header> */}
-      <main className=" container mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+      <main className="container mx-auto max-w-5xl px-2 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-[2fr_1fr] lg:gap-12">
-          <div>
-            <article className="prose dark:prose-invert">
-              <h1>Welcome to my Personal Blog</h1>
-              <p>
-                This is where I share my thoughts, experiences, and insights on a variety of topics. Feel free to
-                explore and let me know what you think!
-              </p>
-              <h2>Recent Posts</h2>
-              <ul>
-                <li>
-                  <Link href="#" className="font-medium hover:underline" prefetch={false}>
-                    The Importance of Self-Care
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="font-medium hover:underline" prefetch={false}>
-                    Navigating the Challenges of Remote Work
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="font-medium hover:underline" prefetch={false}>
-                    Discovering the Joy of Minimalism
-                  </Link>
-                </li>
-              </ul>
-            </article>
+          <div className="text-left flex-grow">
+            <CardTitle style={{ color: 'white' }} className="text-2xl font-bold">Contacto</CardTitle>
+            <h2 style={{ color: 'white' }}>Infórmanos sobre el servicio que necesitas.</h2>
+            <br />
+            <p style={{ color: 'white' }}>
+              Descubre cómo podemos impulsar tu negocio. Agenda una reunión por videollamada o contáctanos por correo para explorar nuestros servicios:<br /><br />
+              - Marketing en redes sociales.<br />
+              - Diseño de páginas web.<br />
+              - Edición multimedia.<br />
+              - Asesorías de desarrollo.<br /><br />
+              Nuestros clientes satisfechos respaldan la calidad de nuestro trabajo. En una breve videollamada, podrás conocer a nuestro equipo y compartir tus objetivos. Juntos, desarrollaremos la estrategia perfecta para maximizar el potencial de tu empresa.<br /><br />
+              Aprovecha nuestra asesoría inicial gratuita y completa. Agenda ahora y da el primer paso hacia el éxito de tu negocio.
+            </p>
           </div>
-          <div className="space-y-8 md:space-y-10 lg:space-y-12">
-            <Card>
-              <CardHeader>
-                <CardTitle>Schedule an Appointment</CardTitle>
-                <CardDescription>Book a session with me to discuss your goals and needs.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-4">
-                  <div className="space-y-1">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Enter your name" />
-                  </div>
-                  <div className="space-y-1">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="Enter your email" />
-                  </div>
-                  <div className="space-y-1">
-                    <Label htmlFor="date">Date</Label>
-                    <Input id="date" type="date" />
-                  </div>
-                  <div className="space-y-1">
-                    <Label htmlFor="time">Time</Label>
-                    <Input id="time" type="time" />
-                  </div>
-                  <Button type="submit" className="w-full">
-                    Book Appointment
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>About the Author</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center gap-4">
-                  <Avatar className="h-16 w-16 border-2 border-primary">
-                    <AvatarImage src="/placeholder-user.jpg" alt="Avatar" />
-                    <AvatarFallback>JD</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-medium">John Doe</div>
-                    <div className="text-muted-foreground">Personal Blogger</div>
-                  </div>
-                </div>
-                <p className="mt-4">
-                  Hi, I'm John Doe, a passionate personal blogger who loves to share my thoughts and experiences with
-                  the world. I'm here to inspire, educate, and connect with like-minded individuals.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+
+
+          <ContentFormContact />
         </div>
       </main>
+
+
     </div>
   )
 }
