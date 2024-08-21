@@ -30,26 +30,26 @@ export function PageJob() {
     <div className="flex flex-col">
       <section className="bg-primary py-20 px-4 md:px-6">
         <div className="container mx-auto max-w-5xl">
-          <h1 className="mb-10 text-center text-4xl font-bold text-primary-foreground">Who We Are</h1>
+          <h1 className="mb-10 text-center text-4xl font-bold text-primary-foreground">Quienes somos</h1>
           <div className="flex justify-center gap-8">
             <div className="flex flex-col items-center">
               <Avatar className="mb-2">
                 <AvatarImage src="/placeholder-user.jpg" alt="Team Member 1" />
-                <AvatarFallback>TM1</AvatarFallback>
+
               </Avatar>
               <p className="text-sm text-muted-foreground">John Doe, CEO</p>
             </div>
             <div className="flex flex-col items-center">
               <Avatar className="mb-2">
                 <AvatarImage src="/placeholder-user.jpg" alt="Team Member 2" />
-                <AvatarFallback>TM2</AvatarFallback>
+
               </Avatar>
               <p className="text-sm text-muted-foreground">Jane Smith, Designer</p>
             </div>
             <div className="flex flex-col items-center">
               <Avatar className="mb-2">
                 <AvatarImage src="/placeholder-user.jpg" alt="Team Member 3" />
-                <AvatarFallback>TM3</AvatarFallback>
+
               </Avatar>
               <p className="text-sm text-muted-foreground">Bob Johnson, Developer</p>
             </div>

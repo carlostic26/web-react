@@ -31,6 +31,7 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { JSX, SVGProps } from "react"
 import { ContentFormContact } from "./component/form-contact"
+import { ContactTextSection } from "./component/contact-text-section"
 
 export function ContactPage() {
   return (
@@ -66,9 +67,9 @@ export function ContactPage() {
           </nav>
         </div>
       </header> */}
-      <main className="container mx-auto max-w-5xl px-2 py-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-[2fr_1fr] lg:gap-12">
-          <div className="text-left flex-grow">
+      <main className="container mx-auto max-w-7xl py-4 sm:px-4 lg:px-8">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr] lg:gap-12">
+          {/* <div className="text-left flex-grow">
             <CardTitle style={{ color: 'white' }} className="text-2xl font-bold">Contacto</CardTitle>
             <h2 style={{ color: 'white' }}>Infórmanos sobre el servicio que necesitas.</h2>
             <br />
@@ -81,10 +82,15 @@ export function ContactPage() {
               Nuestros clientes satisfechos respaldan la calidad de nuestro trabajo. En una breve videollamada, podrás conocer a nuestro equipo y compartir tus objetivos. Juntos, desarrollaremos la estrategia perfecta para maximizar el potencial de tu empresa.<br /><br />
               Aprovecha nuestra asesoría inicial gratuita y completa. Agenda ahora y da el primer paso hacia el éxito de tu negocio.
             </p>
+          </div> */}
+          <div className="w-[90%]">
+            <ContactTextSection />
+
           </div>
+          <div className="w-[90%] ml-0">
+            <ContentFormContact />
 
-
-          <ContentFormContact />
+          </div>
         </div>
       </main>
 
