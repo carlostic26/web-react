@@ -23,6 +23,7 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
+"use client"
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
@@ -32,8 +33,22 @@ import { CardServices } from "./card-services"
 import { CardTitle } from "./card-title"
 import { NavBarResp } from "./nav-bar-resp"
 import FooterService from "./footer"
+import { useEffect, useState } from 'react';
 
 export function HomePage() {
+
+  const [users, setUsers] = useState({});
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const response = await fetch('/api/hello');
+      const data = await response.json();
+      setUsers(data);
+    };
+
+    fetchUsers();
+  }, []);
+
+
   return (
     <div className="flex flex-col min-h-dvh">
       {/* <header className="bg-personalizado-secundary text-primary-foreground py-4 px-6">
@@ -84,7 +99,6 @@ export function HomePage() {
 
           />
 
-
           <CardServices
             image="/img_test.webp"
             title="Promotional Video Editing"
@@ -108,6 +122,17 @@ export function HomePage() {
           />
 
         </div>
+        <div>
+          <h1>Json </h1>
+          {users ? (
+            <div>
+              <p>Nombre: {users.nombre} </p>
+            </div>
+          ) : (
+            <p>No hay aun</p>
+          )}
+        </div>
+
       </main>
       <FooterService />
     </div>
