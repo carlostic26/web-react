@@ -58,8 +58,10 @@ export function ContentFormContact() {
                             className="w-full h-[150px] bg-gray-100 text-left placeholder-center placeholder-top p-2 border border-gray-300 rounded-lg"
                             style={{
                                 display: 'block',
-                                paddingTop: '10px'
+                                paddingTop: '10px',
+                                resize: 'none'
                             }}
+
                         />
                     </div>
 

@@ -48,6 +48,22 @@ export function HomePage() {
     fetchUsers();
   }, []);
 
+  const addUser = async (newUser) => {
+    const response = await fetch('/api/hello', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newUser),
+    });
+
+    if (response.ok) {
+      const updatedUsers = await response.json();
+      setUsers(updatedUsers);
+    } else {
+      console.error('Error adding user:', response.statusText);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-dvh">
@@ -124,13 +140,21 @@ export function HomePage() {
         </div>
         <div>
           <h1>Json </h1>
-          {users ? (
+          {users[0] ? (
             <div>
-              <p>Nombre: {users.nombre} </p>
+              <p>Nombre: {users[0].nombre} </p>
             </div>
           ) : (
             <p>No hay aun</p>
           )}
+        </div>
+
+        <div>
+          <h1>Users</h1>
+
+          <button onClick={() => addUser({ nombre: 'Nuevo Usuario' })}>
+            Add User
+          </button>
         </div>
 
       </main>
