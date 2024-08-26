@@ -34,6 +34,7 @@ import { CardTitle } from "./card-title"
 import { NavBarResp } from "./nav-bar-resp"
 import FooterService from "./footer"
 import { useEffect, useState } from 'react';
+import AsiTrabajamos from "./section-pasos"
 
 export function HomePage() {
 
@@ -104,41 +105,41 @@ export function HomePage() {
         </div>
       </header> */}
       <NavBarResp />
-      <main className="bg-primary flex-1 md:px-6 "> {/* bg-personalizado-background */}
+      <main className="bg-personalizado-background flex-1 md:px-6 "> {/* bg-personalizado-background */}
         <div className="container mx-auto w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:justify-items-center pt-8 mt-14">
 
           <CardServices
-            image="/img_test.webp"
-            title="Promotional Video Editing"
-            description="Descripcion del servicio mas informacion aqui."
+            image="/paginas web.webp"
+            title="Páginas web, con tráfico orgánico"
+            description="Aumentamos el tráfico orgánico que recibe tú página mediante la creación y publicación de contenido para tú página."
             link="https:google.com"
 
           />
 
           <CardServices
-            image="/img_test.webp"
-            title="Promotional Video Editing"
-            description="Descripcion del servicio mas informacion aqui."
+            image="/redes sociales.webp"
+            title="Contenido que Convierte: Redes Sociales"
+            description="Capturamos la atención de tu audiencia en redes sociales con contenido creativo y estratégico, diseñado para aumentar tu engagement y seguidores."
             link="https:google.com"
 
           />
           <CardServices
-            image="/img_test.webp"
-            title="Promotional Video Editing"
-            description="Descripcion del servicio mas informacion aqui."
+            image="/edicion de video.webp"
+            title="Vídeos TikTok que Viralizan: Edición Profesional"
+            description="Transforma tus ideas en videos cortos y atractivos para TikTok, optimizados para alcanzar la máxima visibilidad."
             link="https:google.com"
 
           />
           <CardServices
-            image="/img_test.webp"
-            title="Promotional Video Editing"
-            description="Descripcion del servicio mas informacion aqui."
+            image="/asesorias.webp"
+            title="Asesorias"
+            description="Recibe asesoría personalizada respecto a programación y edición de video."
             link="https:google.com"
 
           />
 
         </div>
-        <div>
+        {/*         <div>
           <h1>Json </h1>
           {users[0] ? (
             <div>
@@ -155,8 +156,12 @@ export function HomePage() {
           <button onClick={() => addUser({ nombre: 'Nuevo Usuario' })}>
             Add User
           </button>
-        </div>
-
+        </div> */}
+        <br />
+        <br />
+        <AsiTrabajamos />
+        <br />
+        <br />
       </main>
       <FooterService />
     </div>

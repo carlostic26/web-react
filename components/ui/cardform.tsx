@@ -18,6 +18,22 @@ const CardForm = React.forwardRef<
 ))
 CardForm.displayName = "CardForm"
 
+const CardSection = React.forwardRef<
+    HTMLDivElement,
+    React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+    <div
+        ref={ref}
+        style={{ backgroundColor: '#122431', color: 'white' }}
+        className={cn(
+            "rounded-lg shadow-sm bg-[#122431]/80 backdrop-blur-sm bg-muted/80 ",
+            className
+        )}
+        {...props}
+    />
+))
+CardSection.displayName = "CardSection"
+
 const CardFormHeader = React.forwardRef<
     HTMLDivElement,
     React.HTMLAttributes<HTMLDivElement>
@@ -77,4 +93,4 @@ const CardFormFooter = React.forwardRef<
 ))
 CardFormFooter.displayName = "CardFormFooter"
 
-export { CardForm, CardFormHeader, CardFormFooter, CardFormTitle, CardFormDescription, CardFormContent }
+export { CardForm, CardFormHeader, CardFormFooter, CardFormTitle, CardFormDescription, CardFormContent, CardSection }

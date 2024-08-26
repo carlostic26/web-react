@@ -31,7 +31,7 @@ export function PageJob() {
   return (
     <div className="flex flex-col">
       <section className="bg-primary py-10 px-4 md:px-6">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-4xl">
           <h1 className="mb-10 text-center text-2xl font-bold text-primary-foreground">Quienes somos</h1>
           <div className="flex justify-center gap-8">
             <div className="flex flex-col items-center">
@@ -42,7 +42,9 @@ export function PageJob() {
                   style={{ borderRadius: '50%', objectFit: 'cover' }}
                 />
               </Avatar>
-              <p className="text-sm text-muted-foreground">John Doe, CEO. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisi eu tincidunt aliquet, nunc nunc lacinia nunc, nec tincidunt nisl nunc nec nunc. Sed euismod, nunc nec.</p>
+              <p className="text-sm text-muted-foreground">Desarrollador Elias Motilla. Con mas de 3 años de experiencia en el sector trabajando con tecnologías como html, css, js, Nest.js, react, flutter...
+
+                <br /><br />Especialidad: Mobile, Web</p>
             </div>
             <div className="flex flex-col items-center">
               <Avatar className="mb-4" style={{ borderRadius: '50%', overflow: 'hidden' }}>
@@ -52,17 +54,22 @@ export function PageJob() {
                   style={{ borderRadius: '50%', objectFit: 'cover' }}
                 />
               </Avatar>
-              <p className="text-sm text-muted-foreground">Jane Smith, Designer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisi eu tincidunt aliquet, nunc nunc lacinia nunc, nec tincidunt nisl nunc nec nunc. Sed euismod, nunc nec.</p>
+              <p className="text-sm text-muted-foreground">Desarrollador Alvaro Gallo, con mas de 25 años de experiencia en desarrollo web y hosting trabajando en el sector con herramientas como Lavaravel, php, ...
+
+                <br /><br />Especialidad: Web, hosting, servidores</p>
             </div>
             <div className="flex flex-col items-center">
               <Avatar className="mb-4" style={{ borderRadius: '50%', overflow: 'hidden' }}>
                 <AvatarImage
-                  src="/img_test.webp"
+                  src="/img-profile-carlos.webp"
                   alt="Team Member 1"
                   style={{ borderRadius: '50%', objectFit: 'cover' }}
                 />
               </Avatar>
-              <p className="text-sm text-muted-foreground">Bob Johnson, Developer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisi eu tincidunt aliquet, nunc nunc lacinia nunc, nec tincidunt nisl nunc nec nunc. Sed euismod, nunc nec.</p>
+              <p className="text-sm text-muted-foreground">Desarrollador Carlos Peñaranda, con mas de 2 años de experiencia trabajando en el sector Mobile usando tecnologias como flutter, dart, kotlin...
+
+                <br /><br />Especialidad: Mobile (Flutter, dart, kotlin), edicion multimedia (Capcut, Sony vegas, Premiere.).
+              </p>
 
             </div>
           </div>
