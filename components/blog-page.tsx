@@ -32,12 +32,12 @@ export function BlogPage() {
       <main className="flex-1 py-8 px-6">
         <div className="container mx-auto grid gap-8">
           <div className="grid gap-4">
-          <CardBlogH/>
-          <CardBlogH/>
+            <CardBlogH />
+            <CardBlogH />
 
-          <CardBlogH/>
-          <CardBlogH/>
-          <CardBlogH/>
+            <CardBlogH />
+            <CardBlogH />
+            <CardBlogH />
 
           </div>
         </div>

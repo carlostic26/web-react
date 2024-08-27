@@ -28,6 +28,16 @@ import React from 'react';
 import Carousel from './carousel';
 
 export function PageJob() {
+
+  const imagesTrabajosRealizados = [
+    { src: "/img-btmstudio-project.webp", alt: "btm-studio-webside" },
+    { src: "/img-cursinapp-project.webp", alt: "Web Page 2" },
+    { src: "/img-natillera-project.webp", alt: "Web Page 3" },
+    { src: "/img-repolla-project.webp", alt: "Web Page 4" },
+    { src: "/img-repuestos-merida-project.webp", alt: "Web Page 5" },
+    { src: "/img-robotapp-project.webp", alt: "Web Page 6" },
+    { src: "/img-hubiaap-project.webp", alt: "Web Page 7" },
+  ];
   return (
     <div className="flex flex-col">
       <section className="bg-primary py-10 px-4 md:px-6">
@@ -37,14 +47,14 @@ export function PageJob() {
             <div className="flex flex-col items-center">
               <Avatar className="mb-4" style={{ borderRadius: '50%', overflow: 'hidden' }}>
                 <AvatarImage
-                  src="/img_test.webp"
-                  alt="Team Member 1"
+                  src="/eliasprofile.webp"
+                  alt="Team Member Elias"
                   style={{ borderRadius: '50%', objectFit: 'cover' }}
                 />
               </Avatar>
-              <p className="text-sm text-muted-foreground">Desarrollador Elias Motilla. Con mas de 3 años de experiencia en el sector trabajando con tecnologías como html, css, js, Nest.js, react, flutter...
+              <p className="text-sm text-muted-foreground">Desarrollador Elias Motilla. Con mas de 10 años de experiencia en el sector trabajando con tecnologías como Html, Css, Js, Next.js, React, Flutter, Android, Java, ...
 
-                <br /><br />Especialidad: Mobile, Web</p>
+                <br /><br />Especialidad: Mobile, Web, Destokp</p>
             </div>
             <div className="flex flex-col items-center">
               <Avatar className="mb-4" style={{ borderRadius: '50%', overflow: 'hidden' }}>
@@ -68,13 +78,11 @@ export function PageJob() {
               </Avatar>
               <p className="text-sm text-muted-foreground">Desarrollador Carlos Peñaranda, con mas de 2 años de experiencia trabajando en el sector Mobile usando tecnologias como flutter, dart, kotlin...
 
-                <br /><br />Especialidad: Mobile (Flutter, dart, kotlin), edicion multimedia (Capcut, Sony vegas, Premiere.).
+                <br /><br />Especialidad: Mobile (Flutter, dart, kotlin), edicion multimedia (Capcut, Sony vegas, Premiere).
               </p>
 
             </div>
           </div>
-
-
         </div>
       </section>
 
@@ -83,30 +91,34 @@ export function PageJob() {
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1">
             <div className="space-y-5">
-
-              <Carousel />
+              <h2 className="text-xl font-semibold text-center mt-5">Creación de páginas web</h2>
+              <Carousel
+                images={imagesTrabajosRealizados}
+              />
             </div>
             <div className="space-y-2">
-
-              <Carousel />
+              <h2 className="text-xl font-semibold text-center mt-5">Trabajos realizados</h2>
+              <Carousel
+                images={imagesTrabajosRealizados}
+              />
             </div>
             <div className="space-y-2">
-
-              <Carousel />
+              <h3 className="text-xl font-semibold text-center mt-5">Creación de contenido</h3>
+              <Carousel
+                images={imagesTrabajosRealizados}
+              />
             </div>
             <div className="space-y-2">
-
-              <Carousel />
+              <h2 className="text-xl font-semibold text-center mt-5">Restaruación de imagen</h2>
+              <Carousel
+                images={imagesTrabajosRealizados}
+              />
             </div>
             <div className="space-y-2">
-
-              <Carousel />
-
-              <h2 className="text-2xl font-bold">Creación de páginas web</h2>
-              <h2 className="text-2xl font-bold">Trabajos realizados</h2>
-              <h2 className="text-2xl font-bold">Creacion de contenido</h2>
-              <h2 className="text-2xl font-bold">Restaruación de imagen</h2>
-              <h2 className="text-2xl font-bold">Desarrollo de aplicaciones móviles</h2>
+              <h2 className="text-xl font-semibold text-center mt-5">Desarrollo de aplicaciones móviles</h2>
+              <Carousel
+                images={imagesTrabajosRealizados}
+              />
             </div>
           </div>
         </div>

@@ -2,10 +2,9 @@
 
 import React from 'react';
 import Slider from 'react-slick';
-import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import '../../app/globals.css';
 
-const Carousel = () => {
+const Carousel = ({ images }) => {
     const settings = {
         dots: true,
         infinite: true,
@@ -17,51 +16,22 @@ const Carousel = () => {
     };
 
     return (
-        <section className="py-12 md:py-20">
-            <div className="container mx-auto ">
+        <section className="py-12 md:py-5">
+            <div className="container mx-auto">
                 <div className="space-y-5">
-                    <h2 className="text-2xl font-bold">Creación de páginas web</h2>
                     <Slider {...settings}>
-                        <div>
-                            <img
-                                src="/placeholder.svg"
-                                width={400}
-                                height={300}
-                                alt="Web Page 1"
-                                className="rounded-md"
-                                style={{ aspectRatio: "400/300", objectFit: "cover" }}
-                            />
-                        </div>
-                        <div>
-                            <img
-                                src="/placeholder.svg"
-                                width={400}
-                                height={300}
-                                alt="Web Page 2"
-                                className="rounded-md"
-                                style={{ aspectRatio: "400/300", objectFit: "cover" }}
-                            />
-                        </div>
-                        <div>
-                            <img
-                                src="/placeholder.svg"
-                                width={400}
-                                height={300}
-                                alt="Web Page 3"
-                                className="rounded-md"
-                                style={{ aspectRatio: "400/300", objectFit: "cover" }}
-                            />
-                        </div>
-                        <div>
-                            <img
-                                src="/placeholder.svg"
-                                width={400}
-                                height={300}
-                                alt="Web Page 4"
-                                className="rounded-md"
-                                style={{ aspectRatio: "400/300", objectFit: "cover" }}
-                            />
-                        </div>
+                        {images.map((image, index) => (
+                            <div key={index}>
+                                <img
+                                    src={image.src}
+                                    width={400}
+                                    height={300}
+                                    alt={image.alt || `Web Page ${index + 1}`}
+                                    className="rounded-md"
+                                    style={{ aspectRatio: "400/300", objectFit: "cover" }}
+                                />
+                            </div>
+                        ))}
                     </Slider>
                 </div>
             </div>
@@ -73,11 +43,11 @@ const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
         <div
-            className={`${className} custom-arrow next-arrow`}
-            style={{ ...style, display: "flex", alignItems: "center", justifyContent: "center", background: "transparent", zIndex: 1 }}
+            //className={`${className} custom-arrow next-arrow`}
+            style={{ ...style, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(128, 128, 128, 0.5)", borderRadius: "50%", width: "50px", height: "50px", zIndex: 1, position: "absolute", right: "-70px", top: "50%", transform: "translateY(-50%)" }}
             onClick={onClick}
         >
-            <FaArrowRight className="text-2xl text-black-500 hover:text-gray-700" />
+            <ArrowForward />
         </div>
     );
 };
@@ -86,14 +56,25 @@ const SamplePrevArrow = (props) => {
     const { className, style, onClick } = props;
     return (
         <div
-            className={`${className} custom-arrow prev-arrow`}
-            style={{ ...style, display: "flex", alignItems: "center", justifyContent: "center", background: "transparent", zIndex: 1 }}
+            //className={`${className} custom-arrow prev-arrow`}
+            style={{ ...style, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(128, 128, 128, 0.5)", borderRadius: "50%", width: "50px", height: "50px", zIndex: 1, position: "absolute", left: "-70px", top: "50%", transform: "translateY(-50%)" }}
             onClick={onClick}
         >
-            <FaArrowLeft className="text-2xl text-black-500 hover:text-gray-700" />
+            <ArrowBack />
         </div>
     );
 };
 
+function ArrowBack() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#FFFFFF"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" /></svg>
+    );
+}
+
+function ArrowForward() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#FFFFFF"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" /></svg>
+    );
+}
 
 export default Carousel;
