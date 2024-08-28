@@ -30,14 +30,15 @@ import Carousel from './carousel';
 export function PageJob() {
 
   const imagesTrabajosRealizados = [
-    { src: "/img-btmstudio-project.webp", alt: "btm-studio-webside" },
-    { src: "/img-cursinapp-project.webp", alt: "Web Page 2" },
-    { src: "/img-natillera-project.webp", alt: "Web Page 3" },
-    { src: "/img-repolla-project.webp", alt: "Web Page 4" },
-    { src: "/img-repuestos-merida-project.webp", alt: "Web Page 5" },
-    { src: "/img-robotapp-project.webp", alt: "Web Page 6" },
-    { src: "/img-hubiaap-project.webp", alt: "Web Page 7" },
+    { src: "/img-btmstudio-project.webp", alt: "btm-studio-webside", link: "https://example.com/btmstudio" },
+    { src: "/img-cursinapp-project.webp", alt: "Web Page 2", link: "https://play.google.com/store/apps/details?id=app.cursin.appcursin" },
+    { src: "/img-natillera-project.webp", alt: "Web Page 3", link: "https://natillera.com/" },
+    { src: "/img-repolla-project.webp", alt: "Web Page 4", link: "https://repolla.com/" },
+    { src: "/img-repuestos-merida-project.webp", alt: "Web Page 5", link: "https://play.google.com/store/apps/details?id=com.btmstudio.rep_merida" },
+    { src: "/img-robotapp-project.webp", alt: "Web Page 6", link: "https://play.google.com/store/apps/details?id=com.robotdepantalla.blogspot" },
+    { src: "/img-hubiaap-project.webp", alt: "Web Page 7", link: "https://play.google.com/store/apps/details?id=com.blogspot.hubiaapp" },
   ];
+
   return (
     <div className="flex flex-col">
       <section className="bg-primary py-10 px-4 md:px-6">
@@ -85,8 +86,6 @@ export function PageJob() {
           </div>
         </div>
       </section>
-
-
       <section className="py-10 md:py-20">
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1">

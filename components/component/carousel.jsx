@@ -22,14 +22,16 @@ const Carousel = ({ images }) => {
                     <Slider {...settings}>
                         {images.map((image, index) => (
                             <div key={index}>
-                                <img
-                                    src={image.src}
-                                    width={400}
-                                    height={300}
-                                    alt={image.alt || `Web Page ${index + 1}`}
-                                    className="rounded-md"
-                                    style={{ aspectRatio: "400/300", objectFit: "cover" }}
-                                />
+                                <a href={image.link} target="_blank" rel="noopener noreferrer">
+                                    <img
+                                        src={image.src}
+                                        width={400}
+                                        height={300}
+                                        alt={image.alt || `Web Page ${index + 1}`}
+                                        className="rounded-md"
+                                        style={{ aspectRatio: "400/300", objectFit: "cover" }}
+                                    />
+                                </a>
                             </div>
                         ))}
                     </Slider>
