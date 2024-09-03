@@ -25,6 +25,7 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 import Link from "next/link"
 import { CardBlogH } from "./card-blog-h"
+import { mapBlogs } from "../app/data/blogData";
 
 export function BlogPage() {
   return (
@@ -32,12 +33,18 @@ export function BlogPage() {
       <main className="flex-1 py-8 px-6">
         <div className="container mx-auto grid gap-8">
           <div className="grid gap-4">
-            <CardBlogH />
-            <CardBlogH />
+            {Object.keys(mapBlogs).map((key) => (
+              <CardBlogH
+                key={key}
+                objBlog={mapBlogs[key]}
+                link={`blog/${key.toLowerCase().replace(/\s+/g, '-')}`}
+              />
+            ))}
+            {/* <CardBlogH />
 
             <CardBlogH />
             <CardBlogH />
-            <CardBlogH />
+            <CardBlogH /> */}
 
           </div>
         </div>
