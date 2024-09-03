@@ -40,10 +40,13 @@ export function CardBlogH() {
           </p>
           <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-primary to-transparent"></div>
         </div>
+
+
+
         <div className="flex justify-end">
-          <Button className="mt-2 w-full text-lg font-bold  bg-[#f87171] style={{ color: 'white' }}" >Ver mas</Button>
+          <Button className="mt-2 w-full text-lg font-bold  bg-[#f87171] style={{ color: 'white' }}" >Ver más</Button>
         </div>
-        <Link href="#" className="text-sm text-primary hover:underline" prefetch={false}>
+        <Link href="/blog/detail" className="text-sm text-primary hover:underline" prefetch={false}>
           Learn More
         </Link>
       </div>

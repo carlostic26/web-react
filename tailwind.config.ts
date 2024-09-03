@@ -19,6 +19,10 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontSize: {
+        'xxs': '0.625rem', // 10px
+        'xxxs': '0.5rem',  // 8px
+      },
     },
     colors: {
       "border": "hsl(var(--border))",
