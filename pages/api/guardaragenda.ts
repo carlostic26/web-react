@@ -9,7 +9,7 @@ export default async function handler(
         const { nombre, email, selectedOption, fecha, hora, mensaje } = req.body;
         try {
             const respuesta = await executeQuery(
-                'INSERT INTO asentamiento (nombre, email, servicio, fecha, hora, mensaje) VALUES (?, ?, ?, ?, ?, ?)',
+                'INSERT INTO agendamiento (nombre, correo, servicio, fecha_elegida, hora_elegida, mensaje) VALUES (?, ?, ?, ?, ?, ?)',
                 [nombre, email, selectedOption, fecha, hora, mensaje]
             );
 
