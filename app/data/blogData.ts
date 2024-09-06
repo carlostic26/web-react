@@ -63,11 +63,5 @@ export const mapBlogs: Record<string, objBlog> = {
         autor: "Elias Montilla",
         fecha: new Date('3/09/2024'),
     },
-    "como usar navigator flutter": {
-        titulo: "Como usar correctamente Navigator en Flutter",
-        imagenes: ["/img_test.webp"],
-        contenido: "Contenido del Blog 2...",
-        autor: "Elias Montilla",
-        fecha: new Date('3/09/2024'),
-    },
+
 };

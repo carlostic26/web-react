@@ -27,15 +27,19 @@ export function ContentFormContact() {
         { value: 'opcion1', label: 'Desarrollo Web' },
         { value: 'opcion2', label: 'Desarrollo Mobile' },
         { value: 'opcion3', label: 'Creación de contenido' },
+        { value: 'opcion4', label: 'Asesoría Técnica' },
     ];
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
 
+        // Busca la opción seleccionada
+        const selectedOptionObject = options.find(option => option.value === selectedOption);
+
         const formData = {
             nombre,
             email,
-            selectedOption,
+            selectedOption: selectedOptionObject ? selectedOptionObject.label : selectedOption,
             fecha: date,
             hora: time,
             mensaje,
