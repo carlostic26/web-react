@@ -6,13 +6,22 @@ import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/component/scroll-area'
 import { Separator } from '@/components/ui/separator'
 import Image from 'next/image'
-import { objBlog } from '@/app/data/blogData'
+import { mapBlogs, objBlog } from '@/app/data/blogData'
 
-export default function DetailBlog({ titulo, imagenes, contenido, autor, fecha }: objBlog) {
+export default function DetailBlog({ titulo }: { titulo: string }) {
   const [collapsed, setCollapsed] = useState(false);
+  
+  // Obtén el blog usando el título que recibes en el prop
+  const blog = mapBlogs[titulo];
+
+  // Si el blog no existe, mostrar un mensaje de error
+  if (!blog) {
+    return <p>Blog no encontrado</p>;
+  }
 
   return (
     <div style={{ color: 'white' }} className="flex flex-col lg:flex-row bg-slate-900 text-white min-h-screen bg-personalizado-background">
+      {/* Sidebar con otros blogs */}
       <aside className={`transition-all duration-500 ${collapsed ? "w-200" : "w-full lg:w-1/3"} p-4 lg:p-6`}>
         <div className="flex justify-between items-center mb-4">
           {!collapsed && <h2 className="ml-5 mt-5 text-xs font-semibold">Otras personas también vieron ...</h2>}
@@ -20,16 +29,17 @@ export default function DetailBlog({ titulo, imagenes, contenido, autor, fecha }
             {collapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
           </Button>
         </div>
-        <ScrollArea className={`h-[calc(100vh-8rem)] overflow-auto"}`}>
-          {[...Array(55)].map((_, i) => (
+        <ScrollArea className={`h-[calc(100vh-8rem)] overflow-auto`}>
+          {/* Mapea sobre los blogs para mostrar títulos e imágenes */}
+          {Object.values(mapBlogs).map((blog, i) => (
             <Card key={i} className={`mb-4 bg-slate-800 transition-all duration-500 ease-in-out ${collapsed ? "w-20" : "w-full"}`}>
               <CardContent className={`p-4 flex items-start space-x-4 ${collapsed ? "justify-center p-0" : ""}`}>
                 <div className={`${collapsed ? "w-full" : "w-1/3"}`}>
-                  <Image width={200} height={200} className="aspect-video bg-slate-700 rounded-md" src="/edicion de video.webp" alt="Portada blog" />
+                  <Image width={200} height={200} className="aspect-video bg-slate-700 rounded-md" src={blog.imagenes[0]} alt="Portada blog" />
                 </div>
                 {!collapsed && (
                   <div className="w-2/3">
-                    <h3 className="font-semibold">Como usar correctamente el Navigator en Flutter</h3>
+                    <h3 className="font-semibold">{blog.titulo}</h3>
                   </div>
                 )}
               </CardContent>
@@ -37,14 +47,17 @@ export default function DetailBlog({ titulo, imagenes, contenido, autor, fecha }
           ))}
         </ScrollArea>
       </aside>
+
       <Separator orientation="vertical" className="bg-white lg:block" />
+
+      {/* Sección principal del blog seleccionado */}
       <main className="flex-1 p-4 lg:p-6 overflow-auto h-[calc(100vh-8rem)] w-full">
         <article className="mx-20px">
-          <h1 className="text-2xl font-bold mb-1">{titulo}</h1>
-          <p className="text-gray-600 text-xs font-light">Por: {autor}</p>
-          <p className="text-gray-600 text-xxxs font-light mb-2">{fecha.toLocaleDateString()}</p>
+          <h1 className="text-2xl font-bold mb-1">{blog.titulo}</h1>
+          <p className="text-gray-600 text-xs font-light">Por: {blog.autor}</p>
+          <p className="text-gray-600 text-xxxs font-light mb-2">{blog.fecha.toLocaleDateString()}</p>
           <div className="bg-slate-700 rounded-lg mb-1 mr-20 flex items-start justify-start">
-            <img src={imagenes[0]} alt="Imagen del blog" className="w-full h-80 object-cover rounded-lg" />
+            <img src={blog.imagenes[0]} alt="Imagen del blog" className="w-full h-80 object-cover rounded-lg" />
           </div>
           <div className="flex items-center justify-between mb-6 mr-20">
             <div className="flex items-center space-x-2">
@@ -60,16 +73,14 @@ export default function DetailBlog({ titulo, imagenes, contenido, autor, fecha }
               </Button>
             </div>
           </div>
-
           <p className="mb-4 mr-20">
-            {contenido}
+            {blog.contenido}
           </p>
         </article>
       </main>
     </div>
-  )
+  );
 }
-
 // "use client"
 // import React, { useState } from 'react'
 // import { BookmarkIcon, Share2Icon, Clock3Icon, ChevronLeft, ChevronRight } from "lucide-react"

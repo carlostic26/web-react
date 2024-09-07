@@ -7,7 +7,7 @@ export default function Blog5gVs5Ghz() {
     return (
         <>
             <NavBarResp />
-            <DetailBlog />
+            <DetailBlog titulo={"deja de confundir 5g con 5gz"}  />
             <FooterService />
         </>
     );

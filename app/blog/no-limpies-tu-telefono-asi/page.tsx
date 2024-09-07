@@ -6,7 +6,7 @@ export default function BlogNoLimpiesTuTelefono() {
     return (
         <>
             <NavBarResp />
-            <DetailBlog />
+            <DetailBlog titulo={"no limpies tu telefono asi"} />
             <FooterService />
         </>
     );

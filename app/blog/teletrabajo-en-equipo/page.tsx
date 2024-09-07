@@ -6,7 +6,7 @@ export default function BlogTeletrabajoEquipo() {
     return (
         <>
             <NavBarResp />
-            <DetailBlog />
+            <DetailBlog titulo={""} />
             <FooterService />
         </>
     );

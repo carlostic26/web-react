@@ -6,7 +6,7 @@ export default function BlogSeoInteligente() {
     return (
         <>
             <NavBarResp />
-            <DetailBlog />
+            <DetailBlog titulo={""} />
             <FooterService />
         </>
     );

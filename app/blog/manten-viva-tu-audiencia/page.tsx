@@ -6,7 +6,7 @@ export default function BlogMantenVivaTuAudiencia() {
     return (
         <>
             <NavBarResp />
-            <DetailBlog />
+            <DetailBlog titulo={""} />
             <FooterService />
         </>
     );

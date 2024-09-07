@@ -6,7 +6,7 @@ export default function BlogEmprendimientoTIC() {
     return (
         <>
             <NavBarResp />
-            <DetailBlog />
+            <DetailBlog titulo={""} />
             <FooterService />
         </>
     );

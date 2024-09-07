@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <>
             <NavBarResp />
-            <DetailBlog />
+            <DetailBlog titulo={""}  />
             <FooterService />
         </>
     );
