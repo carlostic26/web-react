@@ -6,7 +6,7 @@ export default function BlogTipsCommunityManager() {
     return (
         <>
             <NavBarResp />
-            <DetailBlog titulo={""} />
+            <DetailBlog titulo={"tips community manager"} />
             <FooterService />
         </>
     );

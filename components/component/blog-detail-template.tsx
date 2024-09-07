@@ -7,6 +7,7 @@ import { ScrollArea } from '@/components/component/scroll-area'
 import { Separator } from '@/components/ui/separator'
 import Image from 'next/image'
 import { mapBlogs, objBlog } from '@/app/data/blogData'
+import Link from 'next/link'
 
 export default function DetailBlog({ titulo }: { titulo: string }) {
   const [collapsed, setCollapsed] = useState(false);
@@ -18,7 +19,10 @@ export default function DetailBlog({ titulo }: { titulo: string }) {
   if (!blog) {
     return <p>Blog no encontrado</p>;
   }
-
+  // const handleCardClick = (key: string) => {
+  //   const link = `blog/${key.toLowerCase().replace(/\s+/g, '-')}`;
+  //   router.push(link);
+  // };
   return (
     <div style={{ color: 'white' }} className="flex flex-col lg:flex-row bg-slate-900 text-white min-h-screen bg-personalizado-background">
       {/* Sidebar con otros blogs */}
@@ -30,9 +34,9 @@ export default function DetailBlog({ titulo }: { titulo: string }) {
           </Button>
         </div>
         <ScrollArea className={`h-[calc(100vh-8rem)] overflow-auto`}>
-          {/* Mapea sobre los blogs para mostrar títulos e imágenes */}
-          {Object.values(mapBlogs).map((blog, i) => (
+          {Object.entries(mapBlogs).map(([key, blog], i) => (
             <Card key={i} className={`mb-4 bg-slate-800 transition-all duration-500 ease-in-out ${collapsed ? "w-20" : "w-full"}`}>
+              <Link href={`${key.toLowerCase().replace(/\s+/g, '-')}`} passHref>
               <CardContent className={`p-4 flex items-start space-x-4 ${collapsed ? "justify-center p-0" : ""}`}>
                 <div className={`${collapsed ? "w-full" : "w-1/3"}`}>
                   <Image width={200} height={200} className="aspect-video bg-slate-700 rounded-md" src={blog.imagenes[0]} alt="Portada blog" />
@@ -43,6 +47,7 @@ export default function DetailBlog({ titulo }: { titulo: string }) {
                   </div>
                 )}
               </CardContent>
+          </Link>
             </Card>
           ))}
         </ScrollArea>

@@ -6,7 +6,7 @@ export default function BlogSeoInteligente() {
     return (
         <>
             <NavBarResp />
-            <DetailBlog titulo={""} />
+            <DetailBlog titulo={"seo inteligente ia"} />
             <FooterService />
         </>
     );

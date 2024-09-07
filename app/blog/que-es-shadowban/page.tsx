@@ -6,7 +6,7 @@ export default function BlogShadowban() {
     return (
         <>
             <NavBarResp />
-            <DetailBlog titulo={""} />
+            <DetailBlog titulo={"que es shadowban"} />
             <FooterService />
         </>
     );
