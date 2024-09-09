@@ -112,7 +112,7 @@ export function HomePage() {
             image="/paginas web.webp"
             title="Páginas web, con tráfico orgánico"
             description="Aumentamos el tráfico orgánico que recibe tú página mediante la creación y publicación de contenido para tú página."
-            link="https:google.com"
+            link="/contact"
 
           />
 
@@ -120,21 +120,21 @@ export function HomePage() {
             image="/redes sociales.webp"
             title="Contenido que Convierte: Redes Sociales"
             description="Capturamos la atención de tu audiencia en redes sociales con contenido creativo y estratégico, diseñado para aumentar tu engagement y seguidores."
-            link="https:google.com"
+            link="/contact"
 
           />
           <CardServices
             image="/edicion de video.webp"
             title="Vídeos TikTok que Viralizan: Edición Profesional"
             description="Transforma tus ideas en videos cortos y atractivos para TikTok, optimizados para alcanzar la máxima visibilidad."
-            link="https:google.com"
+            link="/contact"
 
           />
           <CardServices
             image="/asesorias.webp"
             title="Asesorias"
             description="Recibe asesoría personalizada respecto a programación y edición de video."
-            link="https:google.com"
+            link="/contact"
 
           />
 

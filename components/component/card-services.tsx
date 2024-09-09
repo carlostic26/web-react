@@ -6,6 +6,7 @@
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { CardTitle } from "./card-title"
+import Link from "next/link";
 
 export function CardServices({ image, title, description, link }: { image: string; title: string; description: string; link: string }) {
   return (
@@ -24,10 +25,10 @@ export function CardServices({ image, title, description, link }: { image: strin
           {/* <ButtonWithLink link={link} /> */}
 
           {/* <a href={link} target="_blank" rel="noopener noreferrer"> 'https://google.com' */}
-
+          <Link href={link} passHref>
           <Button className="mt-2 w-full text-lg font-bold  bg-[#f87171] style={{ color: 'white' }}" >Agendar</Button>
           {/* </a> */}
-
+          </Link>
         </CardFooter>
       </Card>
     </div>
