@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 export default function DetailBlog({ titulo }: { titulo: string }) {
   const [collapsed, setCollapsed] = useState(false);
-  
+
   // Obtén el blog usando el título que recibes en el prop
   const blog = mapBlogs[titulo];
 
@@ -37,17 +37,17 @@ export default function DetailBlog({ titulo }: { titulo: string }) {
           {Object.entries(mapBlogs).map(([key, blog], i) => (
             <Card key={i} className={`mb-4 bg-slate-800 transition-all duration-500 ease-in-out ${collapsed ? "w-20" : "w-full"}`}>
               <Link href={`${key.toLowerCase().replace(/\s+/g, '-')}`} passHref>
-              <CardContent className={`p-4 flex items-start space-x-4 ${collapsed ? "justify-center p-0" : ""}`}>
-                <div className={`${collapsed ? "w-full" : "w-1/3"}`}>
-                  <Image width={200} height={200} className="aspect-video bg-slate-700 rounded-md" src={blog.imagenes[0]} alt="Portada blog" />
-                </div>
-                {!collapsed && (
-                  <div className="w-2/3">
-                    <h3 className="font-semibold">{blog.titulo}</h3>
+                <CardContent className={`p-4 flex items-start space-x-4 ${collapsed ? "justify-center p-0" : ""}`}>
+                  <div className={`${collapsed ? "w-full" : "w-1/3"}`}>
+                    <Image width={200} height={200} className="aspect-video bg-slate-700 rounded-md" src={blog.imagenes[0]} alt="Portada blog" />
                   </div>
-                )}
-              </CardContent>
-          </Link>
+                  {!collapsed && (
+                    <div className="w-2/3">
+                      <h3 className="font-semibold">{blog.titulo}</h3>
+                    </div>
+                  )}
+                </CardContent>
+              </Link>
             </Card>
           ))}
         </ScrollArea>

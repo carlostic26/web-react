@@ -4,91 +4,29 @@
 * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
 */
 
-/** Add fonts into your Next.js project:
-
-import { Syne } from 'next/font/google'
-import { Rethink_Sans } from 'next/font/google'
-
-syne({
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-rethink_sans({
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-To read more about using these font, please visit the Next.js documentation:
-- App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
-- Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
-**/
-import Link from "next/link"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import { JSX, SVGProps } from "react"
+// import { JSX, SVGProps } from "react"
 import { ContentFormContact } from "./component/form-contact"
 import { ContactTextSection } from "./component/contact-text-section"
 
-export function ContactPage() {
+interface ContactPageProps {
+  show: boolean;
+  handleShow: () => void;
+  handleMensaje: (nuevoMensaje: string) => void;
+}
+
+export function ContactPage({ show, handleShow, handleMensaje }: ContactPageProps) {
   return (
     <div className="bg-primary ">
-      {/* <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-sm dark:bg-muted/80">
-        <div className="container mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link href="#" className="flex items-center gap-2 font-semibold" prefetch={false}>
-            <PenIcon className="h-6 w-6" />
-            <span>Personal Blog</span>
-          </Link>
-          <nav className="flex items-center gap-4 md:gap-6 lg:gap-8">
-            <Link
-              href="#"
-              className="rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground dark:hover:bg-background"
-              prefetch={false}
-            >
-              Home
-            </Link>
-            <Link
-              href="#"
-              className="rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground dark:hover:bg-background"
-              prefetch={false}
-            >
-              About
-            </Link>
-            <Link
-              href="#"
-              className="rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground dark:hover:bg-background"
-              prefetch={false}
-            >
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </header> */}
+
       <main className="container mx-auto max-w-7xl py-4 sm:px-4 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr] lg:gap-12">
-          {/* <div className="text-left flex-grow">
-            <CardTitle style={{ color: 'white' }} className="text-2xl font-bold">Contacto</CardTitle>
-            <h2 style={{ color: 'white' }}>Infórmanos sobre el servicio que necesitas.</h2>
-            <br />
-            <p style={{ color: 'white' }}>
-              Descubre cómo podemos impulsar tu negocio. Agenda una reunión por videollamada o contáctanos por correo para explorar nuestros servicios:<br /><br />
-              - Marketing en redes sociales.<br />
-              - Diseño de páginas web.<br />
-              - Edición multimedia.<br />
-              - Asesorías de desarrollo.<br /><br />
-              Nuestros clientes satisfechos respaldan la calidad de nuestro trabajo. En una breve videollamada, podrás conocer a nuestro equipo y compartir tus objetivos. Juntos, desarrollaremos la estrategia perfecta para maximizar el potencial de tu empresa.<br /><br />
-              Aprovecha nuestra asesoría inicial gratuita y completa. Agenda ahora y da el primer paso hacia el éxito de tu negocio.
-            </p>
-          </div> */}
+
           <div className="w-[90%]">
             <ContactTextSection />
 
           </div>
           <div className="w-[90%] ml-0">
-            <ContentFormContact />
+            <ContentFormContact show={show} handleShow={handleShow} handleMensaje={handleMensaje} />
 
           </div>
         </div>
@@ -99,21 +37,21 @@ export function ContactPage() {
   )
 }
 
-function PenIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
-    </svg>
-  )
-}
+// function PenIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
+//   return (
+//     <svg
+//       {...props}
+//       xmlns="http://www.w3.org/2000/svg"
+//       width="24"
+//       height="24"
+//       viewBox="0 0 24 24"
+//       fill="none"
+//       stroke="currentColor"
+//       strokeWidth="2"
+//       strokeLinecap="round"
+//       strokeLinejoin="round"
+//     >
+//       <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+//     </svg>
+//   )
+// }

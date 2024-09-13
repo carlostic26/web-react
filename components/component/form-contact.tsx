@@ -8,11 +8,18 @@ import { CardForm } from "../ui/cardform";
 import { useState } from "react";
 import SelectList from "./select-list";
 
-export function ContentFormContact() {
+interface ContentFormContactProps {
+    show: boolean;
+    handleShow: () => void;
+    handleMensaje: (nuevoMensaje: string) => void;
+}
+
+export function ContentFormContact({ show, handleShow, handleMensaje }: ContentFormContactProps) {
 
     const [selectedOption, setSelectedOption] = useState('');
     const [nombre, setNombre] = useState('');
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [mensaje, setMensaje] = useState('');
@@ -33,6 +40,7 @@ export function ContentFormContact() {
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
 
+        // cambia a true para mostrar el dialogo 
         // Busca la opción seleccionada
         const selectedOptionObject = options.find(option => option.value === selectedOption);
 
@@ -42,6 +50,7 @@ export function ContentFormContact() {
             selectedOption: selectedOptionObject ? selectedOptionObject.label : selectedOption,
             fecha: date,
             hora: time,
+            telefono: phone,
             mensaje,
         };
 
@@ -57,17 +66,27 @@ export function ContentFormContact() {
             });
 
             if (response.ok) {
+
                 // Manejar éxito
-                alert("Se ha agendado la reunión.");
+                // alert("Se ha agendado la reunión.");
+                handleMensaje("Se ha agendado la reunión.");
+                handleShow();
             } else {
+
                 // Manejar error
                 const errorData = await response.json();
-                console.error('Error:', errorData);
-                alert("Hubo un error al agendar la reunión");
+                console.error('AGENDAR ELSE Error:', errorData);
+
+                // alert("Hubo un error al agendar la reunión");
+                handleMensaje("Hubo un error al agendar la reunión");
+                handleShow();
+
             }
         } catch (error) {
-            console.error('Error:', error);
-            alert("Hubo un error al enviar los datos");
+            console.error('AGENDAR catch Error:', error);
+            handleMensaje("Hubo un error al enviar los datos");
+            handleShow();
+            // alert("Hubo un error al enviar los datos");
         }
     };
 
@@ -82,11 +101,15 @@ export function ContentFormContact() {
                     <form className="space-y-2 text-left pt-5" onSubmit={handleSubmit}>
                         <div className="block text-sm font-medium text-gray-700">
                             <Label htmlFor="name">Nombre</Label>
-                            <Input onChange={(e) => setNombre(e.target.value)} id="name" placeholder="Enter your name" />
+                            <Input onChange={(e) => setNombre(e.target.value)} id="name" placeholder="Escribe tu nombre" />
                         </div>
                         <div className="space-y-1 block text-sm font-medium text-gray-700">
                             <Label htmlFor="email">Correo</Label>
-                            <Input onChange={(e) => setEmail(e.target.value)} id="mail" type="email" placeholder="Enter your email" />
+                            <Input onChange={(e) => setEmail(e.target.value)} id="mail" type="email" placeholder="Escribe tu email" />
+                        </div>
+                        <div className="space-y-1 block text-sm font-medium text-gray-700">
+                            <Label htmlFor="email">Whatsapp</Label>
+                            <Input onChange={(e) => setPhone(e.target.value)} id="mail" type="text" placeholder="Escribe tu telefono (+57 320 87654321)" />
                         </div>
                         <div className="space-y-1">
                             <SelectList options={options} onChange={handleChange} />
@@ -121,27 +144,5 @@ export function ContentFormContact() {
                 </CardContent>
             </CardForm>
         </div>
-
-        /* <Card className="bg-gray-100 rounded-lg p-6">
-            <CardHeader>
-                <CardTitle>About the Author</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <div className="flex items-center gap-4">
-                    <Avatar className="h-16 w-16 border-2 border-primary">
-                        <AvatarImage src="/placeholder-user.jpg" alt="Avatar" />
-                        <AvatarFallback>JD</AvatarFallback>
-                    </Avatar>
-                    <div>
-                        <div className="font-medium">John Doe</div>
-                        <div className="text-muted-foreground">Personal Blogger</div>
-                    </div>
-                </div>
-                <p className="mt-4">
-                    Hi, I'm John Doe, a passionate personal blogger who loves to share my thoughts and experiences with
-                    the world. I'm here to inspire, educate, and connect with like-minded individuals.
-                </p>
-            </CardContent>
-        </Card> */
     );
 }

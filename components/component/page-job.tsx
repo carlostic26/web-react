@@ -29,11 +29,35 @@ import Carousel from './carousel';
 
 export function PageJob() {
 
-  const imagesTrabajosRealizados = [
+  const itemsPaginasWeb = [
+    { src: "/img-btmstudio-project.webp", alt: "btm-studio-webside", link: "https://example.com/btmstudio" },
+    { src: "/img-natillera-project.webp", alt: "Web Page 3", link: "https://natillera.com/" },
+    { src: "/img-repolla-project.webp", alt: "Web Page 4", link: "https://repolla.com/" },
+  ];
+
+  const itemsTrabajosRealizados = [
     { src: "/img-btmstudio-project.webp", alt: "btm-studio-webside", link: "https://example.com/btmstudio" },
     { src: "/img-cursinapp-project.webp", alt: "Web Page 2", link: "https://play.google.com/store/apps/details?id=app.cursin.appcursin" },
     { src: "/img-natillera-project.webp", alt: "Web Page 3", link: "https://natillera.com/" },
     { src: "/img-repolla-project.webp", alt: "Web Page 4", link: "https://repolla.com/" },
+    { src: "/img-repuestos-merida-project.webp", alt: "Web Page 5", link: "https://play.google.com/store/apps/details?id=com.btmstudio.rep_merida" },
+    { src: "/img-robotapp-project.webp", alt: "Web Page 6", link: "https://play.google.com/store/apps/details?id=com.robotdepantalla.blogspot" },
+    { src: "/img-hubiaap-project.webp", alt: "Web Page 7", link: "https://play.google.com/store/apps/details?id=com.blogspot.hubiaapp" },
+  ];
+
+  const itemsCreacionContenido = [
+    { src: "/img_creacion_contenido_fb1.webp", alt: "creacion-contenido", link: "https://www.facebook.com/natilleras" },
+    { src: "/img_creacion_contenido_unatecla.webp", alt: "contenido-una-tecla", link: "https://unatecla.net/read-blog/21_natillera-ahorremos-entre-amigos-y-familiares.html" },
+  ];
+
+  const itemsRestauracionImagen = [
+    { src: "/img_restoration_1.webp", alt: "btm-studio-webside", link: "https://www.youtube.com/playlist?list=PLrCQaitBpNfeHS2hSDj9mDfiqnE07Ql5E" },
+    { src: "/img_restoration_2.webp", alt: "Web Page 2", link: "https://www.youtube.com/playlist?list=PLrCQaitBpNfeHS2hSDj9mDfiqnE07Ql5E" },
+    { src: "/img_restoration_3.webp", alt: "Web Page 3", link: "https://www.youtube.com/playlist?list=PLrCQaitBpNfeHS2hSDj9mDfiqnE07Ql5E" },
+  ];
+
+  const itemsDesarrolloApps = [
+    { src: "/img-cursinapp-project.webp", alt: "Web Page 2", link: "https://play.google.com/store/apps/details?id=app.cursin.appcursin" },
     { src: "/img-repuestos-merida-project.webp", alt: "Web Page 5", link: "https://play.google.com/store/apps/details?id=com.btmstudio.rep_merida" },
     { src: "/img-robotapp-project.webp", alt: "Web Page 6", link: "https://play.google.com/store/apps/details?id=com.robotdepantalla.blogspot" },
     { src: "/img-hubiaap-project.webp", alt: "Web Page 7", link: "https://play.google.com/store/apps/details?id=com.blogspot.hubiaapp" },
@@ -60,12 +84,12 @@ export function PageJob() {
             <div className="flex flex-col items-center">
               <Avatar className="mb-4" style={{ borderRadius: '50%', overflow: 'hidden' }}>
                 <AvatarImage
-                  src="/img_test.webp"
+                  src="/img_avatar_alvaro.webp"
                   alt="Team Member 1"
                   style={{ borderRadius: '50%', objectFit: 'cover' }}
                 />
               </Avatar>
-              <p className="text-sm text-muted-foreground">Desarrollador Alvaro Gallo, con mas de 25 años de experiencia en desarrollo web y hosting trabajando en el sector con herramientas como Lavaravel, php, ...
+              <p className="text-sm text-muted-foreground">Desarrollador Alvaro Gallo, con amplia experiencia en desarrollo web y hosting trabajando en el sector con herramientas como Lavaravel, php, ...
 
                 <br /><br />Especialidad: Web, hosting, servidores</p>
             </div>
@@ -79,7 +103,7 @@ export function PageJob() {
               </Avatar>
               <p className="text-sm text-muted-foreground">Desarrollador Carlos Peñaranda, con mas de 2 años de experiencia trabajando en el sector Mobile usando tecnologias como flutter, dart, kotlin...
 
-                <br /><br />Especialidad: Mobile (Flutter, dart, kotlin), edicion multimedia (Capcut, Sony vegas, Premiere).
+                <br /><br />Especialidad: Mobile, Edicion de multimedia (IA, Capcut, PhotoShop, Sony vegas, Premiere).
               </p>
 
             </div>
@@ -89,34 +113,37 @@ export function PageJob() {
       <section className="py-10 md:py-20">
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1">
-            <div className="space-y-5">
-              <h2 className="text-xl font-semibold text-center mt-5">Creación de páginas web</h2>
-              <Carousel
-                images={imagesTrabajosRealizados}
-              />
-            </div>
+
             <div className="space-y-2">
               <h2 className="text-xl font-semibold text-center mt-5">Trabajos realizados</h2>
               <Carousel
-                images={imagesTrabajosRealizados}
+                images={itemsTrabajosRealizados}
               />
             </div>
+
+            <div className="space-y-5">
+              <h2 className="text-xl font-semibold text-center mt-5">Creación de páginas web</h2>
+              <Carousel
+                images={itemsPaginasWeb}
+              />
+            </div>
+
             <div className="space-y-2">
               <h3 className="text-xl font-semibold text-center mt-5">Creación de contenido</h3>
               <Carousel
-                images={imagesTrabajosRealizados}
+                images={itemsCreacionContenido}
               />
             </div>
             <div className="space-y-2">
               <h2 className="text-xl font-semibold text-center mt-5">Restaruación de imagen</h2>
               <Carousel
-                images={imagesTrabajosRealizados}
+                images={itemsRestauracionImagen}
               />
             </div>
             <div className="space-y-2">
               <h2 className="text-xl font-semibold text-center mt-5">Desarrollo de aplicaciones móviles</h2>
               <Carousel
-                images={imagesTrabajosRealizados}
+                images={itemsDesarrolloApps}
               />
             </div>
           </div>
